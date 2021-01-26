@@ -1,0 +1,25 @@
+$primary-color: rgb(143, 143, 143);
+@mixin box{
+    width:400px;
+    height: 400px;
+    margin:50px 100px 50px 100px;
+    color:white;
+    text-align: center;
+    border:3px solid darken( $primary-color, 5% )
+}
+#quizzes{
+  
+  width: 100%;
+  max-width: 100%;
+  
+  
+  
+}
+
+.quiz{
+    border-radius: 15px;
+    display: inline-block;
+    background-color: $primary-color;
+    @include box;
+   
+}

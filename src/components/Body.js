@@ -12,17 +12,18 @@ export default function Body() {
         <div className="container">
             <div className="row">
                 <div className="col-md-4">
-                    <h2 className="font-weight-bold">XD</h2>
-                    <p>Tekst</p>
-                     
+                    <h2 className="font-weight-bold">Chat</h2>
+                    <p>Chatuj z użytkownikami ;)</p>
+                    {buttonChat ? <Chat />:null}   
+                    <button className="btn btn-secondary" onClick={() => SetbuttonChat(!buttonChat)}>
+                         Chatuj!
+                        </button>
                 </div>
                 <div className="col-md-4">
                     <h2 className="font-weight-bold">XD</h2>
                     <p>Tekst</p>
-                    {buttonChat ? <Chat />:null}    
-                        <button className="btn btn-secondary" onClick={() => SetbuttonChat(!buttonChat)}>
-                         Chatuj!
-                        </button>
+                   
+                       
                 </div>
                 <div className="col-md-4">
                     <h2 className="font-weight-bolder">xd</h2>

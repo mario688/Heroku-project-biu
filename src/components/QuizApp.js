@@ -9,13 +9,19 @@ export default function QuizApp(props)  {
 	const [currentQuestion, setCurrentQuestion] = useState(0);
 	const [showScore, setShowScore] = useState(false);
 	const [score, setScore] = useState(0);
+	//const [openQuestion, setopenQuestion] = useState(false);
 	
 
 	const handleAnswerOptionClick = (isCorrect) => {
+		if(quizdata[props.id].questions[currentQuestion].openQuestion){
+			if(isCorrect==document.getElementById('openQuestion').value){
+				setScore(score + 1);
+			}
+
+		}else
 		if (isCorrect) {
 			setScore(score + 1);
-			
-		}
+	}
 
 		const nextQuestion = currentQuestion + 1;
 		if (nextQuestion < quizdata[props.id].questions.length) {
@@ -26,6 +32,7 @@ export default function QuizApp(props)  {
 				scoreboard[props.id].users.push({nick:user,score:score+1})
 			}else if(!isCorrect){
 				scoreboard[props.id].users.push({nick:user,score:score})
+			
 			}
 			
 			
@@ -44,7 +51,7 @@ export default function QuizApp(props)  {
 		});
 		
 		
-		
+	
 		
 		 
 	return (
@@ -56,8 +63,9 @@ export default function QuizApp(props)  {
 				 
 				 Twój wynik {user} to : {score} na {quizdata[props.id].questions.length}<br></br>
 				 
+					
 				 <ScoreBoardTable data={scoreboard[props.id].users} />
-				
+				 
 
 				
 			 </div>
@@ -71,9 +79,25 @@ export default function QuizApp(props)  {
 					 <div className='question-text'>{quizdata[props.id].questions[currentQuestion].questionText}</div>
 				 </div>
 				 <div className='answer-section'>
-					 {quizdata[props.id].questions[currentQuestion].answerOptions.map((answerOption) => (
-						 <button className="mr-2 mb-2 btn btn-secondary" onClick={() => handleAnswerOptionClick(answerOption.isCorrect)}>{answerOption.answerText}</button>
-					 ))}
+					 {quizdata[props.id].questions[currentQuestion].openQuestion?(
+						 <>
+					 <input id="openQuestion" type="text"></input><br></br>
+					 
+					 <button className="mr-2 mb-2 btn btn-secondary" onClick={() => handleAnswerOptionClick(quizdata[props.id].questions[currentQuestion].answerOptions[0].isCorrect)}>Potwierdź</button>
+					 </>
+					 )
+					 :
+
+					 (
+					 quizdata[props.id].questions[currentQuestion].answerOptions.map((answerOption) => (
+						 
+						  <button className="mr-2 mb-2 btn btn-secondary" onClick={() => handleAnswerOptionClick(answerOption.isCorrect)}>{answerOption.answerText}</button>
+						
+
+						
+						 
+					 ))
+					 )}
 				 </div>
 			 </>
 		 )}

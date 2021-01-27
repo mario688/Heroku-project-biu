@@ -79,25 +79,49 @@ export default function QuizApp(props)  {
 					 <div className='question-text'>{quizdata[props.id].questions[currentQuestion].questionText}</div>
 				 </div>
 				 <div className='answer-section'>
-					 {quizdata[props.id].questions[currentQuestion].openQuestion?(
-						 <>
-					 <input id="openQuestion" type="text"></input><br></br>
-					 
-					 <button className="mr-2 mb-2 btn btn-secondary" onClick={() => handleAnswerOptionClick(quizdata[props.id].questions[currentQuestion].answerOptions[0].isCorrect)}>Potwierdź</button>
-					 </>
-					 )
-					 :
-
-					 (
-					 quizdata[props.id].questions[currentQuestion].answerOptions.map((answerOption) => (
+				 {(() => {
+     					   if (quizdata[props.id].questions[currentQuestion].typOfQuestion=='open') {
+     							return (
+									<>
+									<input id="openQuestion" type="text"></input><br></br>
+									
+									<button className="mr-2 mb-2 btn btn-secondary" onClick={() => handleAnswerOptionClick(quizdata[props.id].questions[currentQuestion].answerOptions[0].isCorrect)}>Potwierdź</button>
+									</>
+          						)
+       						 } else if (quizdata[props.id].questions[currentQuestion].typOfQuestion=='choice') {
+         						 return (
+            						<div> {quizdata[props.id].questions[currentQuestion].answerOptions.map((answerOption) => (
 						 
-						  <button className="mr-2 mb-2 btn btn-secondary" onClick={() => handleAnswerOptionClick(answerOption.isCorrect)}>{answerOption.answerText}</button>
-						
+										<button className="mr-2 mb-2 btn btn-secondary" onClick={() => handleAnswerOptionClick(answerOption.isCorrect)}>{answerOption.answerText}</button>
+										   
+								   ))
+									}</div>
+         						 )
+							 } else if (quizdata[props.id].questions[currentQuestion].typOfQuestion=='multiChoice') {
+								return (<>
+										{quizdata[props.id].questions[currentQuestion].answerOptions.map((answerOption) => (
+											<>
+											<input class="checkMulti" type="checkbox" value={answerOption.isCorrect}></input>{answerOption.answerText}<br></br>
+												<h1>===========================DODAĆ LOGIKE===============</h1>
+											</>	
+									))
+								 }
+								
+								<button className="mr-2 mb-2 btn btn-secondary" onClick={() => handleAnswerOptionClick(quizdata[props.id].questions[currentQuestion].answerOptions[0].isCorrect)}>Potwierdź</button>
+								 
+								  </>
+								)
+						   }else {
+         						 return (
+            						<div>catch all</div>
+          						)
+       						 }
+      			})()}
 
-						
-						 
-					 ))
-					 )}
+
+
+
+
 				 </div>
 			 </>
 		 )}

@@ -16,7 +16,7 @@ export default function ChooseQuiz() {
         <>  
             <div id="quizzes">
               
-            <div class="quiz">
+            <div class="quiz1">
             <h2>{quizdata[0].quizTitle}</h2>    
             {buttonChat ? <QuizApp id="0" />:null}   
             <button className="btn btn-secondary" onClick={() => SetbuttonChat(!buttonChat)}>
@@ -24,7 +24,7 @@ export default function ChooseQuiz() {
                         </button>
             </div>   
             
-            <div class="quiz">
+            <div class="quiz2">
             <h2>{quizdata[1].quizTitle}</h2>
              {buttonChat2 ? <QuizApp id="1" />:null}   
             <button className="btn btn-secondary" onClick={() => SetbuttonChat2(!buttonChat2)}>

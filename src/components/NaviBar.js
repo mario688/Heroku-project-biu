@@ -1,6 +1,6 @@
 import React from "react";
 
-
+import {Link} from "react-router-dom";
 
 
 
@@ -18,14 +18,14 @@ export default function NaviBar() {
             <div className="collapse navbar-collapse" id="navbarsExampleDefault">
                 <ul className="navbar-nav mr-auto">
                     <li className="nav-item ">
-                        <a className="nav-link">Główna strona <span className="sr-only">(current)</span></a>
+                        <a><Link className="nav-link" to="/Home">Główna strona <span className="sr-only">(current)</span></Link></a>
                     </li>
                    
                     <li className="nav-item">
                         <a className="nav-link">Kontakt</a>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link">O nas</a>
+                        <a><Link className="nav-link" to="/About">O projekcie</Link></a>
                     </li>
 
                 </ul>

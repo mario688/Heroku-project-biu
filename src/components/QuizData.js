@@ -3,15 +3,25 @@ const quizdata=[
          quizTitle:"Quizz nr 1.",
          questions:[
             {   
-                openQuestion:true,
+                typOfQuestion:'open',
                 questionText: 'Wpisz cos',
                 answerOptions: [
                     { answerText: 'cos', isCorrect:"cos" },
                    
                 ],
-            },   
+            }, 
+            {   
+                typOfQuestion:'multiChoice',   
+                questionText: 'Kwadrat to?',
+                answerOptions: [
+                    { answerText: 'prostokąt', isCorrect: true },
+                    { answerText: '4-kąt', isCorrect: true },
+                    { answerText: '5-kąt', isCorrect: false },
+                    { answerText: 'równoległobok', isCorrect: true },
+                ],
+            },  
           {   
-              openQuestion:false,     
+            typOfQuestion:'choice',     
               questionText: 'Stolica Polski?',
               answerOptions: [
                   { answerText: 'New York', isCorrect: false },
@@ -21,7 +31,7 @@ const quizdata=[
               ],
           },
           { 
-            openQuestion:false,  
+            typOfQuestion:'choice',   
             questionText: 'HTML jest językiem programowania',
             answerOptions: [
                 { answerText: 'prawda', isCorrect: true },
@@ -30,7 +40,7 @@ const quizdata=[
             ],
         },
           {     
-              openQuestion:false,
+            typOfQuestion:'choice',  
               questionText: 'Z czego jest robiony majonez',
               answerOptions: [
                   { answerText: 'pomidorów', isCorrect: false },
@@ -40,7 +50,7 @@ const quizdata=[
               ],
           },
           { 
-            openQuestion:false,  
+            typOfQuestion:'choice',    
             questionText: 'Jak nazywa się gwiazda w naszym układzie?',
             answerOptions: [
                 { answerText: 'New York', isCorrect: false },

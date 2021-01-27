@@ -3,8 +3,11 @@ const scoreboard=[
     {
         quizTitle:"Quiz 1",
         users:[
-			{nick:"mario",score:'1000'},
-			{nick:"ktoś",score:'10'}
+            {nick:"Adolf",score:'6'},
+            {nick:"mario",score:'90'},
+            {nick:"Mc",score:'33'},
+            {nick:"Putin",score:'55'},
+            {nick:"ktoś",score:'10'},
 		]  
 
     },

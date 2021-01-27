@@ -1,14 +1,4 @@
-#photo {
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    padding: 5px;
-    position: absolute;
-    width: 200px;
-    right: 400px;
-    top: 50px;
-    transform : rotate(20deg);
-  }
-  
+
   
   body {
     background-color: #282c34;
@@ -47,6 +37,7 @@
     padding: 10px;
     height: 300px;
     margin: 10vh 0 10vh;
+  
     overflow-y: scroll;
     display: flex;
     flex-direction: column;

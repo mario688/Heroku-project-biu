@@ -10,16 +10,7 @@ const quizdata=[
                    
                 ],
             }, 
-            {   
-                typOfQuestion:'multiChoice',   
-                questionText: 'Kwadrat to?',
-                answerOptions: [
-                    { answerText: 'prostokąt', isCorrect: true },
-                    { answerText: '4-kąt', isCorrect: true },
-                    { answerText: '5-kąt', isCorrect: false },
-                    { answerText: 'równoległobok', isCorrect: true },
-                ],
-            },  
+           
           {   
             typOfQuestion:'choice',     
               questionText: 'Stolica Polski?',
@@ -30,6 +21,16 @@ const quizdata=[
                   { answerText: 'Dublin', isCorrect: false },
               ],
           },
+          {   
+            typOfQuestion:'multiChoice',   
+            questionText: 'Kwadrat to?',
+            answerOptions: [
+                { answerText: 'prostokąt', isCorrect: true },
+                { answerText: '4-kąt', isCorrect: true },
+                { answerText: '5-kąt', isCorrect: false },
+                { answerText: 'równoległobok', isCorrect: true },
+            ],
+        },  
           { 
             typOfQuestion:'choice',   
             questionText: 'HTML jest językiem programowania',

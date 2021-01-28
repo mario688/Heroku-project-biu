@@ -29,7 +29,7 @@ export default function About() {
          <li>(12 pkt) Quiz powinien mieć następujące typy pytań:
             <ul>
             <li>(1 pkt) Jednokrotnego wyboru<img id="check" src={check} alt="Logo PJATKA"/></li>
-            <li>(1 pkt) Wielokrotnego wyboru</li>
+            <li>(1 pkt) Wielokrotnego wyboru<img id="check" src={check} alt="Logo PJATKA"/></li>
             <li>(1 pkt) Prawda/Fałsz<img id="check" src={check} alt="Logo PJATKA"/></li>
             <li>(1 pkt) Krótka odpowiedź<img id="check" src={check} alt="Logo PJATKA"/></li>
             <li>(1 pkt) Wybór odpowiedzi z listy</li>

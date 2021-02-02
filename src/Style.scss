@@ -9,6 +9,7 @@ $primary-color: rgb(143, 143, 143);
     border-radius: 15px;
     background-color: $primary-color;
 }
+
 #quizzes{
   width: 100%;
   max-width: 100%;
@@ -21,6 +22,16 @@ $primary-color: rgb(143, 143, 143);
   display: inline-block;
   @include box;
 }
+#checkboxlist{
+  margin-left: 150px;
+  text-align: left;
+ 
+  input{
+    width: 30px;
+    height: 30px;
+  }
+}
+
 .scrollTable{
   width: 395px;
   height: 250px;
@@ -32,12 +43,18 @@ $primary-color: rgb(143, 143, 143);
 }
 Link{
   text-decoration: none;
-  color:brown;
+  
+}
+.question-text{
+  font-size:xx-large;
 }
 .scrollTable::-webkit-scrollbar-track {
   background: #1e1e24;
 }
-
+#openQuestion{
+  border-radius: 6px;
+  background-color: lighten( $primary-color, 30% );
+}
 .scrollTable::-webkit-scrollbar-thumb {
   background: #6b6777;
 }
@@ -52,6 +69,7 @@ h3{
   top:200px;
   color:black;
 }
+
 
 #TextBody{
   

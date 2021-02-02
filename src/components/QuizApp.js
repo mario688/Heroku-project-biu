@@ -10,11 +10,10 @@ export default function QuizApp(props)  {
 	const [showScore, setShowScore] = useState(false);
 	const [score, setScore] = useState(0);
 	const [OpenScore,setOpenScore]=useState(0);
-
 	
 	
 	const handleAnswerOptionClick = (isCorrect) => {
-		setOpenScore(0);
+		
 		if(quizdata[props.id].questions[currentQuestion].typOfQuestion=='open'){
 			if(isCorrect==document.getElementById('openQuestion').value){
 				setScore(score + 1);
@@ -22,57 +21,43 @@ export default function QuizApp(props)  {
 			}
 		
 		}else if(quizdata[props.id].questions[currentQuestion].typOfQuestion=='multiChoice'){
-			if($('.checkMulti1:checked').val()=='true'){
-				setOpenScore(1)
-			}else if($('.checkMulti1:checked').val()=='false'){
-				setOpenScore(0)
-			}else if($('.checkMulti1').val()=='false'){
-				setOpenScore(1)
-			}else if($('.checkMulti1').val()=='true'){
-				setOpenScore(0)
-			}
-			if($('.checkMulti2:checked').val()=='true'){
-				setOpenScore(1)
-			}else if($('.checkMulti2:checked').val()=='false'){
-				setOpenScore(0)
-			}else if($('.checkMulti2').val()=='false'){
-				setOpenScore(1)
-			}else if($('.checkMulti2').val()=='true'){
-				setOpenScore(0)
-			}
-			if($('.checkMulti3:checked').val()=='true'){
-				setOpenScore(1)
-			}else if($('.checkMulti3:checked').val()=='false'){
-				setOpenScore(0)
-			}else if($('.checkMulti3').val()=='false'){
-				setOpenScore(1)
-			}else if($('.checkMulti3').val()=='true'){
-				setOpenScore(0)
-			}
-			if($('.checkMulti4:checked').val()=='true'){
-				setOpenScore(1)
-			}else if($('.checkMulti4:checked').val()=='false'){
-				setOpenScore(0)
-			}else if($('.checkMulti4').val()=='false'){
-				setOpenScore(1)
-			}else if($('.checkMulti4').val()=='true'){
-				setOpenScore(0)
-			}
-			
+
+			var trueCheckbox = []; 
+			var checkboxChecked = []; 
+			var checkboxes = document.getElementsByName("input");
+		
+    			for(var i = 0; i < checkboxes.length; i++) {
+					if((checkboxes[i].value === "true")){
+						trueCheckbox.push(checkboxes[i])
+					}	
+      			  if(checkboxes[i].checked && (checkboxes[i].value === "true")) {
+					checkboxChecked.push(checkboxes[i])
+				}else if(checkboxes[i].checked && (checkboxes[i].value === "false"))
+				checkboxChecked.pop()
+				}
 				
+
+   				 if(trueCheckbox.length==checkboxChecked.length) {
+					setScore(score + 1)
+   				} 
+  				
+
 			
-				
+		
 			
+
 		}else if(quizdata[props.id].questions[currentQuestion].typOfQuestion=='choice'){
 			if (isCorrect) {
+			
 				setScore(score + 1);
-				
+			
 			}
 				
 
 		}
-
-		setScore(score+OpenScore)
+		
+				
+		
 
 		const nextQuestion = currentQuestion + 1;
 		if (nextQuestion < quizdata[props.id].questions.length) {
@@ -80,20 +65,23 @@ export default function QuizApp(props)  {
 			
 			
 		} else {
-			
-			
+		
+				
 			if(isCorrect){
+				
 				scoreboard[props.id].users.push({nick:user,score:score+1})
 			}else if(!isCorrect){
 				scoreboard[props.id].users.push({nick:user,score:score})
 			
 			}
+				
 			setShowScore(true);
 			
 			
 		}
 	};
 
+	
 	
 		useEffect(()=>
 		{
@@ -106,7 +94,7 @@ export default function QuizApp(props)  {
 		});
 		
 		
-	
+		
 	
 		 
 	return (
@@ -128,10 +116,10 @@ export default function QuizApp(props)  {
 			 <>
 				 <div className='question-section'>
 					 <div className='question-count'>
-						 <span>Question {currentQuestion + 1}</span>/{quizdata[props.id].questions.length}
+						 <span>Question {currentQuestion + 1}</span>/{quizdata[props.id].questions.length}<br></br>
+						
 					 </div>
-					 		<h1>OpenScore:{OpenScore}</h1>
-					 		<h1>Score:{score}</h1>
+					 	
 					 <div className='question-text'>{quizdata[props.id].questions[currentQuestion].questionText}</div>
 				 </div>
 				 <div className='answer-section'>
@@ -156,22 +144,17 @@ export default function QuizApp(props)  {
          						 )
 							 } else if (quizdata[props.id].questions[currentQuestion].typOfQuestion=='multiChoice') {
 								return (<>
-
-								<input className="checkMulti1" type="checkbox" value={quizdata[props.id].questions[currentQuestion].answerOptions[0].isCorrect} ></input>{quizdata[props.id].questions[currentQuestion].answerOptions[0].answerText}<br></br>
-								<input className="checkMulti2" type="checkbox" value={quizdata[props.id].questions[currentQuestion].answerOptions[1].isCorrect} ></input>{quizdata[props.id].questions[currentQuestion].answerOptions[1].answerText}<br></br>
-								<input className="checkMulti3" type="checkbox" value={quizdata[props.id].questions[currentQuestion].answerOptions[2].isCorrect} ></input>{quizdata[props.id].questions[currentQuestion].answerOptions[2].answerText}<br></br>	
-								<input className="checkMulti4" type="checkbox" value={quizdata[props.id].questions[currentQuestion].answerOptions[3].isCorrect} ></input>{quizdata[props.id].questions[currentQuestion].answerOptions[3].answerText}<br></br>	
-											   
-											   
+								<div id="checkboxlist">
+								<input name="input" type="checkbox" value={quizdata[props.id].questions[currentQuestion].answerOptions[0].isCorrect} ></input>{quizdata[props.id].questions[currentQuestion].answerOptions[0].answerText}<br></br>
+								<input name="input" type="checkbox" value={quizdata[props.id].questions[currentQuestion].answerOptions[1].isCorrect} ></input>{quizdata[props.id].questions[currentQuestion].answerOptions[1].answerText}<br></br>
+								<input name="input" type="checkbox" value={quizdata[props.id].questions[currentQuestion].answerOptions[2].isCorrect} ></input>{quizdata[props.id].questions[currentQuestion].answerOptions[2].answerText}<br></br>	
+								<input name="input" type="checkbox" value={quizdata[props.id].questions[currentQuestion].answerOptions[3].isCorrect} ></input>{quizdata[props.id].questions[currentQuestion].answerOptions[3].answerText}<br></br>	
+								</div>			   
+								
+							
 											
-											
+											<button className="mr-2 mb-2 btn btn-secondary" onClick={() => handleAnswerOptionClick()}>Potwierdź</button>
 
-								<button className="mr-2 mb-2 btn btn-secondary" onClick={() => handleAnswerOptionClick()}>Potwierdź</button>		
-									
-
-								
-								
-								
 								 
 								  </>
 								)

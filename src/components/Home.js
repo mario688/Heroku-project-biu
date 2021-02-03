@@ -9,20 +9,20 @@ import ChooseQuiz from "./ChooseQuiz";
 export default function Home() {
     return (
         <>
-            <meta charSet="utf-8"/>
+            <meta charSet="utf-8" />
             <title>TeleMed</title>
-        <div className="jumbotron">
-            <div className="container">
-                <h1 className="display-3">Quizzy </h1>
-              
-                <p>Sprawdź swoją wiedzę w różnych dziedzinach</p>
-              
+            <div className="jumbotron">
+                <div className="container">
+                    <h1 className="display-3">Quizzy </h1>
+
+                    <p>Sprawdź swoją wiedzę w różnych dziedzinach</p>
+
+                </div>
+                <ChooseQuiz />
             </div>
-            <ChooseQuiz/>
-        </div>
-        <Body/>
-        <NaviBar/>
-        <Footer/>
+            <Body />
+            <NaviBar />
+            <Footer />
         </>
     )
 }

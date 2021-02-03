@@ -1,4 +1,4 @@
-import React, {useEffect, useState,useRef } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 
 
 import scoreboard from './ScoreBoardData'
@@ -7,12 +7,12 @@ export default function ScoreBoardTable(props) {
 
 
 
-		props.data.sort((a, b) => (a.score < b.score) ? 1 : -1)
-	
-		
-        return (
-			props.data.length > 0 && (
-				<div class="scrollTable">
+	props.data.sort((a, b) => (a.score < b.score) ? 1 : -1)
+
+
+	return (
+		props.data.length > 0 && (
+			<div class="scrollTable">
 				<table class="table table-striped">
 					<thead>
 						<tr>
@@ -29,12 +29,12 @@ export default function ScoreBoardTable(props) {
 						))}
 					</tbody>
 				</table>
-				</div>
-			)
-		);
+			</div>
+		)
+	);
 
 
 
 
-		
+
 }

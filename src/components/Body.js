@@ -1,12 +1,12 @@
 
 import Chat from './Chat'
 
-import React, {useState } from 'react';
+import React, { useState } from 'react';
 
 
 
 export default function Body() {
-    const [buttonChat,SetbuttonChat] = useState(false);
+    const [buttonChat, SetbuttonChat] = useState(false);
 
     return (
         <div className="container">
@@ -14,14 +14,14 @@ export default function Body() {
                 <div className="col-md-4">
                     <h2 className="font-weight-bold">Chat</h2>
                     <p>Chatuj z użytkownikami ;)</p>
-                    {buttonChat ? <Chat />:null}   
+                    {buttonChat ? <Chat /> : null}
                     <button className="btn btn-secondary" onClick={() => SetbuttonChat(!buttonChat)}>
-                         Chatuj!
+                        Chatuj!
                         </button>
                 </div>
-              
+
             </div>
-            <hr/>
+            <hr />
         </div>
     )
 }

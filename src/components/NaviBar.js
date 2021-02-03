@@ -21,9 +21,7 @@ export default function NaviBar() {
                         <a><Link className="nav-link" to="/Home">Główna strona <span className="sr-only">(current)</span></Link></a>
                     </li>
                    
-                    <li className="nav-item">
-                        <a className="nav-link">Kontakt</a>
-                    </li>
+                  
                     <li className="nav-item">
                         <a><Link className="nav-link" to="/About">O projekcie</Link></a>
                     </li>

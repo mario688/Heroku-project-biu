@@ -2,11 +2,10 @@ import React from "react"
 import NaviBar from "./NaviBar";
 import Footer from "./Footer";
 import Body from "./Body";
-import ChooseQuiz from "./ChooseQuiz";
-import Style from '../Style.scss'
 import photo from "../img/logo_header.png"
 import check from "../img/check.png"
 export default function About() {
+   
     return (
         <>
         
@@ -33,7 +32,7 @@ export default function About() {
             <li>(1 pkt) Prawda/Fałsz<img id="check" src={check} alt="Logo PJATKA"/></li>
             <li>(1 pkt) Krótka odpowiedź<img id="check" src={check} alt="Logo PJATKA"/></li>
             <li>(1 pkt) Wybór odpowiedzi z listy</li>
-            <li>(2 pkt) Wypełnienie słów</li>
+            <li>(2 pkt) Wypełnienie słów<img id="check" src={check} alt="Logo PJATKA"/></li>
             <li>(3 pkt) Sortowanie elementów</li>
             <li>(2 pkt) Dopasowanie elementów</li>
             </ul>

@@ -1,39 +1,65 @@
 $primary-color: rgb(143, 143, 143);
 @mixin box{
-    width:400px;
-    height: 400px;
-    margin:50px 100px 50px 100px;
+    width:500px;
+    height: 500px;
+    margin:50px 50px 50px 50px;
+
     color:white;
     text-align: center;
     border:3px solid darken( $primary-color, 5% );
     border-radius: 15px;
     background-color: $primary-color;
 }
-
-#quizzes{
-  width: 100%;
-  max-width: 100%;
-}
 .quiz1{
     @include box;
     float: left;
 }
 .quiz2{
+  float: left;
+  @include box;
+  
+}
+.quiz3{
   display: inline-block;
   @include box;
 }
 #checkboxlist{
   margin-left: 150px;
   text-align: left;
- 
   input{
     width: 30px;
     height: 30px;
   }
 }
+#gap{
+  width: 140px;
+  border:none;
+  background: transparent;
+  margin-left:5px;
+  margin-right:2px;
+  color: black;
+}
+#gap:focus{
+  outline: none;
+  
+  color:white;
+}
+#quizzes{
+  width: 100%;
+  max-width: 100%;
+}
+.btn-secondary{
+  max-height: 75px;
+ 
+}
+button:active{
+  transform: translateY(4px);
+}
+
+
 
 .scrollTable{
-  width: 395px;
+  width: 100%;
   height: 250px;
   overflow-y: auto;
   overflow-x: hidden
@@ -46,12 +72,14 @@ Link{
   
 }
 .question-text{
-  font-size:xx-large;
+  font-size:x-large;
+  margin-bottom: 20px;
 }
 .scrollTable::-webkit-scrollbar-track {
   background: #1e1e24;
 }
 #openQuestion{
+  color:black;
   border-radius: 6px;
   background-color: lighten( $primary-color, 30% );
 }
@@ -95,8 +123,6 @@ h3{
   width: 20px;
   height: 20px;
 }
-
- 
 
   
 

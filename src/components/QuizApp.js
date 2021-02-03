@@ -20,6 +20,12 @@ export default function QuizApp(props)  {
 			
 			}
 		
+		}else if(quizdata[props.id].questions[currentQuestion].typOfQuestion=='gapWord'){
+			if(isCorrect==document.getElementById('gap').value){
+				setScore(score + 1);
+			
+			}
+		
 		}else if(quizdata[props.id].questions[currentQuestion].typOfQuestion=='multiChoice'){
 
 			var trueCheckbox = []; 
@@ -127,7 +133,7 @@ export default function QuizApp(props)  {
      					   if (quizdata[props.id].questions[currentQuestion].typOfQuestion=='open') {
      							return (
 									<>
-									<input id="openQuestion" type="text"></input><br></br>
+									<input id="openQuestion" className="mr-2 mb-2 btn btn-secondary" type="text"></input><br></br>
 									
 									<button className="mr-2 mb-2 btn btn-secondary" onClick={() => handleAnswerOptionClick(quizdata[props.id].questions[currentQuestion].answerOptions[0].isCorrect)}>Potwierdź</button>
 									</>
@@ -136,7 +142,7 @@ export default function QuizApp(props)  {
          						 return (
             						<div> {quizdata[props.id].questions[currentQuestion].answerOptions.map((answerOption) => (
 										<>
-										<button className="mr-2 mb-2 btn btn-secondary" onClick={() => handleAnswerOptionClick(answerOption.isCorrect)}>{answerOption.answerText}</button>
+										<button className="mr-2 mb-2 w-75  btn btn-secondary" onClick={() => handleAnswerOptionClick(answerOption.isCorrect)}>{answerOption.answerText}</button><br></br>
 										
 										</>
 								   ))
@@ -145,10 +151,10 @@ export default function QuizApp(props)  {
 							 } else if (quizdata[props.id].questions[currentQuestion].typOfQuestion=='multiChoice') {
 								return (<>
 								<div id="checkboxlist">
-								<input name="input" type="checkbox" value={quizdata[props.id].questions[currentQuestion].answerOptions[0].isCorrect} ></input>{quizdata[props.id].questions[currentQuestion].answerOptions[0].answerText}<br></br>
-								<input name="input" type="checkbox" value={quizdata[props.id].questions[currentQuestion].answerOptions[1].isCorrect} ></input>{quizdata[props.id].questions[currentQuestion].answerOptions[1].answerText}<br></br>
-								<input name="input" type="checkbox" value={quizdata[props.id].questions[currentQuestion].answerOptions[2].isCorrect} ></input>{quizdata[props.id].questions[currentQuestion].answerOptions[2].answerText}<br></br>	
-								<input name="input" type="checkbox" value={quizdata[props.id].questions[currentQuestion].answerOptions[3].isCorrect} ></input>{quizdata[props.id].questions[currentQuestion].answerOptions[3].answerText}<br></br>	
+								<input name="input"className="mr-2 mb-2 btn btn-secondary" type="checkbox" value={quizdata[props.id].questions[currentQuestion].answerOptions[0].isCorrect} ></input>{quizdata[props.id].questions[currentQuestion].answerOptions[0].answerText}<br></br>
+								<input name="input" className="mr-2 mb-2 btn btn-secondary" type="checkbox" value={quizdata[props.id].questions[currentQuestion].answerOptions[1].isCorrect} ></input>{quizdata[props.id].questions[currentQuestion].answerOptions[1].answerText}<br></br>
+								<input name="input" className="mr-2 mb-2 btn btn-secondary" type="checkbox" value={quizdata[props.id].questions[currentQuestion].answerOptions[2].isCorrect} ></input>{quizdata[props.id].questions[currentQuestion].answerOptions[2].answerText}<br></br>	
+								<input name="input" className="mr-2 mb-2 btn btn-secondary" type="checkbox" value={quizdata[props.id].questions[currentQuestion].answerOptions[3].isCorrect} ></input>{quizdata[props.id].questions[currentQuestion].answerOptions[3].answerText}<br></br>	
 								</div>			   
 								
 							
@@ -158,9 +164,12 @@ export default function QuizApp(props)  {
 								 
 								  </>
 								)
-						   }else {
-         						 return (
-            						<div>catch all</div>
+						   }else if (quizdata[props.id].questions[currentQuestion].typOfQuestion=='gapWord') {
+         						 return (<>
+								
+									<div className='question-text'>{quizdata[props.id].questions[currentQuestion].sentence}<input id="gap" placeHolder="........................."type="text"></input>{quizdata[props.id].questions[currentQuestion].restSentence}</div>
+									<button className="mr-2 mb-2 btn btn-secondary" onClick={() => handleAnswerOptionClick(quizdata[props.id].questions[currentQuestion].answerOptions[0].isCorrect)}>Potwierdź</button>
+									</>
           						)
        						 }
       			})()}

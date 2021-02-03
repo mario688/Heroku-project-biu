@@ -3,7 +3,7 @@ const scoreboard=[
     {
         quizTitle:"Quiz 1",
         users:[
-            {nick:"Adolf",score:'6'},
+           
             {nick:"mario",score:'90'},
             {nick:"Mc",score:'33'},
             {nick:"Putin",score:'55'},
@@ -14,7 +14,20 @@ const scoreboard=[
     {
         quizTitle:"Quiz 2",
         users:[
-            {nick:'Kuba',score:'20'}
+            {nick:'Kuba',score:'8'},
+            {nick:'Maciek',score:'2'},
+            {nick:'Mateusz',score:'6'},
+            {nick:'Mario',score:'6'},
+        ]
+
+    },
+    {
+        quizTitle:"Quiz 3",
+        users:[
+            {nick:'Kuba',score:'8'},
+            {nick:'Maciek',score:'2'},
+            {nick:'Mateusz',score:'6'},
+            {nick:'Mario',score:'6'},
         ]
 
     }

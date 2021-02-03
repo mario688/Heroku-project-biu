@@ -108,6 +108,19 @@ h3{
 #contents{
   padding-left: 20%;
   text-align:left;
+  max-height: 600px;
+  overflow-y: auto;
+  overflow-x: hidden;
+
+}
+#contents::-webkit-scrollbar-thumb {
+  background: #6b6777;
+}
+#contents::-webkit-scrollbar-track {
+  background: #1e1e24;
+}
+#contents::-webkit-scrollbar {
+  width: 0.25rem;
 }
 #photo{
   position: absolute;

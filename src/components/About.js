@@ -37,12 +37,39 @@ export default function About() {
             <li>(2 pkt) Dopasowanie elementów</li>
             </ul>
          </li>
+         <li>Pod ocenę będą brane następujące elementy:</li>
+         <li>(25 pkt) Uwzględnienie powyższych wymagań z uwzględnieniem sytuacji wyjątkowych</li>
+         <li>(10 pkt) Styl aplikacji pod względem CSS </li>
+         <ul>
+             <li>(1 pkt) Użycie frameworka CSS np. Bootstrap<img id="check" src={check} alt="Logo PJATKA"/></li>
+             <li>(2 pkt) Personalizacja stylu CSS za pomocą Less/SaaS<img id="check" src={check} alt="Logo PJATKA"/></li>
+             <li>(4 pkt) Funkcjonalne ułożenie elementów aplikacji<img id="check" src={check} alt="Logo PJATKA"/></li>
+             <li>(1 pkt) Użycie React Rounting<img id="check" src={check} alt="Logo PJATKA"/></li>
+             <li>(1 pkt) Użycie React Redux</li>
+             <li>(1 pkt) Użycie TypeScript</li>
+         </ul>
+         <li>(2 pkt) Przetestowanie aplikacji</li>
+         <li>(2 pkt) Styl i podział kodu<img id="check" src={check} alt="Logo PJATKA"/></li>
+         <li>Dodatkowe punkty można otrzymać za wykonanie następujących podpunktów:</li>
+         <ul>
+            <li>(1 pkt) Logowanie administratora</li>
+
+            <li> (1 pkt) Internationalizacja aplikacji</li>
+            <li>(1 pkt) Deploy aplikacji na serwer zewnętrzny (na przykład w serwisie Heroku/Netlify).<img id="check" src={check} alt="Logo PJATKA"/></li>
+            <li>(2 pkt) Inne rzeczy, nie pokazane na wykładzie/zajęciach.<img id="check" src={check} alt="Logo PJATKA"/></li>
+         </ul>
+         <li>Ponadto pod ocenę jest brane również: (Brak tych elementów to ujemne punkty od obowiązkowej punktacji zadania!)</li>
+         <ul>
+             <li>Historia projektu w repozytorium.</li>
+             <li>Ocena opisu commitów</li>
+             <li>Stan repozytorium (żeby nie był śmietnikiem!!!)</li>
+         </ul>
          </ul>
          </div>
          </div>
         </div>
-        <Body/>
-        <Footer/>
+        
+       
         </>
     )
 }
